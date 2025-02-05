@@ -4,11 +4,6 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 
-#define DEFAULT 0
-#define SYMBOL  1
-#define NUMBER  2
-#define SPARE   3
-
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -50,7 +45,7 @@
             bindings = <
 &kp Q             &kp W         &kp E         &kp R           &kp T                                               &kp Y        &kp U  &kp I      &kp O    &kp P
 &kp A             &kp S         &kp D         &kp F           &kp G             &kp LS(LG(S))      &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp SQT
-&mt Z             &kp X         &kp C         &kp V           &kp B             &mkp MB1           &mkp MB2       &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp Z             &kp X         &kp C         &kp V           &kp B             &mkp MB1           &mkp MB2       &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp TAB           &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &lt 2 SPACE        &kp BACKSPACE  &lt 1 ENTER                             &kp DEL
             >;
 
@@ -70,7 +65,7 @@
 
         layer_2 {
             bindings = <
-&kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_NUMBER_4  &kp KP_NUMBER_5                                                   &kp KP_NUMBER_6   &kp KP_NUMBER_7    &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMBER_0
+&kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_NUMBER_4  &kp KP_NUMBER_5                                 &kp KP_NUMBER_6   &kp KP_NUMBER_7   &kp KP_NUMBER_8    &kp KP_NUMBER_9  &kp KP_NUMBER_0
 &trans           &trans           &trans           &trans           &trans           &trans         &trans          &trans            &trans            &trans             &trans           &trans
 &trans           &trans           &trans           &trans           &trans           &trans         &trans          &trans            &trans            &trans             &trans           &trans
 &trans           &trans           &trans           &trans           &trans           &trans         &trans          &trans                                                                  &trans
