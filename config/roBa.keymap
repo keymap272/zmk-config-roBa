@@ -5,71 +5,6 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 
-// OS設定を日本語キーボードのまま使用するための変換定義
-#define JP_DQUOTE       AT                // "
-#define JP_AMPERSAND    CARET             // &
-#define JP_QUOTE        AMPERSAND         // '
-#define JP_EQUAL        UNDER             // =
-#define JP_CARET        EQUAL             // ^
-#define JP_YEN          0x89              // ¥
-#define JP_PLUS         COLON             // +
-#define JP_TILDE        PLUS              // ~
-#define JP_PIPE         LS(0x89)          // |
-#define JP_AT           LEFT_BRACKET      // @
-#define JP_COLON        SINGLE_QUOTE      // :
-#define JP_ASTERISK     DOUBLE_QUOTES     // *
-#define JP_BACKQUOTE    LEFT_BRACE        // `
-#define JP_UNDERSCORE   LS(0x87)          // _
-#define JP_LBRACKET     RIGHT_BRACKET     // [
-#define JP_RBRACKET     BACKSLASH         // ]
-#define JP_LPAREN       ASTERISK          // (
-#define JP_RPAREN       LEFT_PARENTHESIS  // )
-#define JP_LBRACE       RIGHT_BRACE       // {
-#define JP_RBRACE       PIPE              // }
-#define JP_KANA         LANGUAGE_1        // かな
-#define JP_EISU         LANGUAGE_2        // 英数
-#define JP_HANZEN       GRAVE             // 半角/全角
-// OS設定を日本語キーボードのまま使用する(2)
-#define JP_ZKHK  GRAVE        // Zenkaku ↔ Hankaku ↔ Kanji (半角 ↔ 全角 ↔ 漢字)
-#define JP_MINUS MINUS        // -
-#define JP_CARET EQUAL        // ^
-#define JP_YEN   INT3         // ¥
-#define JP_AT    LBKT         // @
-#define JP_LBKT  RBKT         // [
-#define JP_EISU  CAPS         // Eisū (英数)
-#define JP_SEMI  SEMI         // ;
-#define JP_COLON SQT          // :
-#define JP_RBKT  NUHS         // ]
-#define JP_COMMA COMMA        // ,
-#define JP_DOT   DOT          // .
-#define JP_SLASH SLASH        // /
-#define JP_BSLH  INT1         // (backslash)
-#define JP_MHEN  INT5         // Muhenkan (無変換)
-#define JP_HENK  INT4         // Henkan (変換)
-#define JP_KANA  INT2         // Katakana ↔ Hiragana ↔ Rōmaji (カタカナ ↔ ひらがな ↔ ローマ字)
-#define JP_EXCL  LS(N1)       // !
-#define JP_DQT   LS(N2)       // "
-#define JP_HASH  LS(N3)       // #
-#define JP_DLLR  LS(N4)       // $
-#define JP_PRCNT LS(N5)       // %
-#define JP_AMPS  LS(N6)       // &
-#define JP_SQT   LS(N7)       // '
-#define JP_LPAR  LS(N8)       // (
-#define JP_RPAR  LS(N9)       // )
-#define JP_EQUAL LS(JP_MINUS) // =
-#define JP_TILDE LS(JP_CARET) // ~
-#define JP_PIPE  LS(JP_YEN)   // |
-#define JP_GRAVE LS(JP_AT)    // `
-#define JP_LBRC  LS(JP_LBKT)  // {
-#define JP_CAPS  LS(JP_EISU)  // Caps Lock
-#define JP_PLUS  LS(JP_SEMI)  // +
-#define JP_ASTRK LS(JP_COLON) // *
-#define JP_RBRC  LS(JP_RBKT)  // }
-#define JP_LT    LS(JP_COMMA) // <
-#define JP_RT    LS(JP_DOT)   // >
-#define JP_QMARK LS(JP_SLASH) // ?
-#define JP_UNDER LS(JP_BSLH)  // _
-
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -127,10 +62,10 @@
 
         default_layer {
             bindings = <
-&kp Q    &kp W         &kp E         &kp R           &kp T                                                 &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A    &kp S         &kp D         &kp F           &kp G             &kp LS(LG(S))      &kp GRAVE        &kp H        &kp J  &kp K      &kp L    &kp SQT
-&kp Z    &kp X         &kp C         &kp V           &kp B             &mkp MB1           &mkp MB2         &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp TAB  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &lt 2 SPACE        &lt 1 BACKSPACE  &kp ENTER                               &kp COLON
+&kp Q    &kp W         &kp E         &kp R           &kp T                                               &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A    &kp S         &kp D         &kp F           &kp G             &kp LS(LG(S))      &kp GRAVE      &kp H        &kp J  &kp K      &kp L    &kp SQT
+&kp Z    &kp X         &kp C         &kp V           &kp B             &mkp MB1           &mkp MB2       &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp TAB  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &lt 2 SPACE        &kp BACKSPACE  &lt 1 ENTER                             &kp DEL
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -138,10 +73,10 @@
 
         layer_1 {
             bindings = <
-&left_shift N1        &left_shift N2     &left_shift N3    &left_shift N4    &left_shift N5                              &left_shift N6            &left_shift N7     &left_shift N8    &left_shift N9    &kp DEL
-&kp RS(NUMBER_1)      &kp DOUBLE_QUOTES  &trans            &trans            &trans            &trans    &kp LANGUAGE_1  &kp LS(NON_US_BACKSLASH)  &kp LS(BACKSLASH)  &kp PIPE          &trans            &kp PIPE2
-&kp F1                &kp F2             &kp F3            &kp F4            &kp F5            &trans    &trans          &kp F6                    &kp F7             &kp F8            &kp F9            &kp F10
-&kp F11               &kp F12            &trans            &trans            &trans            &trans    &kp DEL         &trans                                                                           &trans
+&left_shift N1        &left_shift N2     &left_shift N3    &left_shift N4    &left_shift N5                          &left_shift N6            &left_shift N7     &left_shift N8    &left_shift N9    &kp DEL
+&kp RS(NUMBER_1)      &kp DOUBLE_QUOTES  &trans            &trans            &trans            &trans      &trans    &kp LS(NON_US_BACKSLASH)  &kp LS(BACKSLASH)  &kp PIPE          &trans            &kp PIPE2
+&kp F1                &kp F2             &kp F3            &kp F4            &kp F5            &mkp MB1    &mkp MB2  &kp F6                    &kp F7             &kp F8            &kp F9            &kp F10
+&kp F11               &kp F12            &trans            &trans            &trans            &trans      &trans    &trans                                                                           &trans
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -149,10 +84,10 @@
 
         layer_2 {
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2     &kp NUMBER_3   &kp NUMBER_4   &kp NUMBER_5                              &kp NUMBER_6   &kp NUMBER_7       &kp NUMBER_8       &kp NUMBER_9    &kp NUMBER_0
-&kp LS(N1)    &kp LS(N2)       &kp LS(N3)     &kp LS(N4)     &kp LS(N5)    &trans      &kp LANGUAGE_2  &kp LS(N6)     &kp LS(&7)         &kp LS(&8)         &kp LS(&9)      &kp JP_PLUS
-&JP_LBRACKE   &kp JP_RBRACKET  &kp JP_LBRACE  &kp JP_RBRACE  &trans        &trans      &trans          &JP_YEN        &kp JP_UNDERSCORE  &kp SEMI           &kp JP_EQUAL    &kp MINUS
-&trans        &trans           &trans         &trans         &trans        &trans      &kp DEL         &trans                                                               &kp JP_PIPE
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                        &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
+&trans        &trans        &trans        &trans        &trans        &trans      &trans    &trans        &trans        &trans        &trans        &trans
+&trans        &trans        &trans        &trans        &trans        &mkp MB1    &mkp MB2  &trans        &trans        &trans        &trans        &trans
+&trans        &trans        &trans        &trans        &trans        &trans      &trans    &trans                                                  &trans
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -160,10 +95,10 @@
 
         layer_3 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &mkp MB1    &mkp MB2  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans                          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
